@@ -11,15 +11,17 @@ interface ChatBubbleProps {
 
 const ChatBubble : React.FC<ChatBubbleProps>= ({profilePic,author,message,ownMessage = false}) => {
   return (
-    <div className='chatbubble-parent' style={ownMessage ? {alignSelf: 'flex-end'}: {}}>
+    <div className={`chatbubble-parent ${ownMessage ? "" : "chatbubble-parentgrid"}`} style={ownMessage ? {alignSelf: 'flex-end'}: {}}>
+      {!ownMessage &&
       <div className='chatbubble-profilepic'>
-        {!ownMessage && 
+         
           <div className='chatbubble-picborder'>
             <img src={profilePic} />
           </div>
-        }
+        
       </div>
-      <div className={ownMessage ? "chatbubble-content-own":"chatbubble-content"}>
+      }
+      <div className={ownMessage ? "chatbubble-content chatbubble-ownmessage":"chatbubble-content chatbubble-receivedmessage"}>
         <div className='chatbubble-author'>
           <p> {ownMessage ? "You":author}</p>
         </div>
