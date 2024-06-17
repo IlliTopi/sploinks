@@ -1,21 +1,30 @@
 import React from 'react'
-import Lean from '../../assets/lean_daymn.jpg'
+
 import "./chat.css"
 
-const ChatBubble = () => {
+interface ChatBubbleProps {
+  profilePic: string;
+  author: string;
+  message: string;
+  ownMessage: boolean;
+}
+
+const ChatBubble : React.FC<ChatBubbleProps>= ({profilePic,author,message,ownMessage = false}) => {
   return (
-    <div className='chatbubble-parent'>
+    <div className='chatbubble-parent' style={ownMessage ? {alignSelf: 'flex-end'}: {}}>
       <div className='chatbubble-profilepic'>
-        <div className='chatbubble-picborder'>
-          <img src={Lean} />
-        </div>
+        {!ownMessage && 
+          <div className='chatbubble-picborder'>
+            <img src={profilePic} />
+          </div>
+        }
       </div>
-      <div className="chatbubble-content">
+      <div className={ownMessage ? "chatbubble-content-own":"chatbubble-content"}>
         <div className='chatbubble-author'>
-          <p> Juusotin 7</p>
+          <p> {ownMessage ? "You":author}</p>
         </div>
         <div className='chatbubble-message'>
-          ChatBubble
+          <p>{message}</p>
         </div>
       </div>
     </div>

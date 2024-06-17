@@ -1,11 +1,20 @@
+.chatface-parent {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start; 
+}
+
+
+
 .chatbubble-parent {
     position: relative;
-    width: 500px;
-    /* height: 300px; */
+    min-width: 500px;
+    max-width: 1000px;
     display: grid;
     grid-template-areas: "profilepicture msgcontent";
     gap: 0.5rem;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 80px auto;
     grid-template-rows: auto auto;
     color: #C8C8C8;
 }
@@ -13,21 +22,21 @@
 .chatbubble-profilepic{
     grid-area: profilepicture;
     width: 100%;
-    min-height: 100px;
+    height: 80px;
 }
 .chatbubble-picborder {
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 100%;
+    border-radius: 50%;
     background: rgb(151,255,0);
     background: linear-gradient(0deg, rgba(151,255,0,1) 0%, rgba(87,109,53,1) 100%);
 }
 
 .chatbubble-picborder > img {
     position: absolute;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    width: 65px;
+    height: 65px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -56,13 +65,28 @@
 
 .chatbubble-content {
     background: rgb(36,36,36);
-    background: linear-gradient(0deg, rgba(36,36,36,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(36,36,36,1) 0%, rgba(0,0,0,1) 100%);
     grid-area: msgcontent;
     width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
+    padding: 0.25rem;
+    border-radius: 13px 13px 13px 3px;
+}
+
+.chatbubble-content-own {
+    background: rgb(36,36,36);
+    background: linear-gradient(180deg, rgba(36,36,36,1) 0%, rgba(0,0,0,1) 100%);
+    grid-area: msgcontent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    padding: 0.25rem;
+    border-radius: 13px 13px 3px 13px;
 }
 
 /* .chatbubble-parent::after {
