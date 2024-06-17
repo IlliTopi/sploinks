@@ -1,0 +1,78 @@
+.chatbubble-parent {
+    position: relative;
+    width: 500px;
+    /* height: 300px; */
+    display: grid;
+    grid-template-areas: "profilepicture msgcontent";
+    gap: 0.5rem;
+    grid-template-columns: 100px auto;
+    grid-template-rows: auto auto;
+    color: #C8C8C8;
+}
+
+.chatbubble-profilepic{
+    grid-area: profilepicture;
+    width: 100%;
+    min-height: 100px;
+}
+.chatbubble-picborder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: rgb(151,255,0);
+    background: linear-gradient(0deg, rgba(151,255,0,1) 0%, rgba(87,109,53,1) 100%);
+}
+
+.chatbubble-picborder > img {
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+.chatbubble-author{
+    grid-area: author;
+    height: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+.chatbubble-author > p {
+    margin: 0;
+    padding: 0;
+}
+.chatbubble-message{
+    grid-area: message;
+    height: 100%;
+    text-align: left;
+}
+
+
+.chatbubble-content {
+    background: rgb(36,36,36);
+    background: linear-gradient(0deg, rgba(36,36,36,1) 0%, rgba(0,0,0,1) 100%);
+    grid-area: msgcontent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+/* .chatbubble-parent::after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 100%;
+    width: 500px;
+    height: 10px;
+
+    background: rgb(151,255,0);
+    background: linear-gradient(90deg, rgba(151,255,0,1) 0%, rgba(0,0,0,1) 100%);;
+} */
