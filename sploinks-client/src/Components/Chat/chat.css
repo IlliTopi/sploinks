@@ -17,6 +17,7 @@
     grid-template-columns: 80px auto;
     grid-template-rows: auto auto;
     color: #C8C8C8;
+    margin-bottom: 1.2rem;
 }
 
 .chatbubble-profilepic{
@@ -35,8 +36,8 @@
 
 .chatbubble-picborder > img {
     position: absolute;
-    width: 65px;
-    height: 65px;
+    width: 80%;
+    height: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -73,7 +74,8 @@
     flex-wrap: nowrap;
     align-items: stretch;
     padding: 0.25rem;
-    border-radius: 13px 13px 13px 3px;
+    border-radius: 25px 25px 25px 25px;
+    z-index: 1;
 }
 
 .chatbubble-content-own {
@@ -86,7 +88,8 @@
     flex-wrap: nowrap;
     align-items: stretch;
     padding: 0.25rem;
-    border-radius: 13px 13px 3px 13px;
+    border-radius: 25px 25px 25px 25px;
+    z-index: 1;
 }
 
 /* .chatbubble-parent::after {
@@ -100,3 +103,14 @@
     background: rgb(151,255,0);
     background: linear-gradient(90deg, rgba(151,255,0,1) 0%, rgba(0,0,0,1) 100%);;
 } */
+
+.chatbubble-tilted-under-square {
+    width: 80%;
+    height: 70%;
+    bottom: -3%;
+    left: 100px;
+    background: linear-gradient(180deg, #86BB38 55%, rgba(151,255,0,1) 100%);
+    position: absolute;
+    transform: rotate(-3deg);
+    border-radius: 30px;
+}

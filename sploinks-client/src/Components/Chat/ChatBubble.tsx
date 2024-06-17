@@ -27,6 +27,7 @@ const ChatBubble : React.FC<ChatBubbleProps>= ({profilePic,author,message,ownMes
           <p>{message}</p>
         </div>
       </div>
+      <div className='chatbubble-tilted-under-square'></div>
     </div>
   )
 }
