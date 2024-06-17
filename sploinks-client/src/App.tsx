@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ChatBubble from './Components/Chat/ChatBubble'
 import ChatFace from './Components/Chat/ChatFace'
+import Bottomfade from './Components/Chat/Bottomfade'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <ChatFace />
+      <Bottomfade />
     </>
   )
 }
