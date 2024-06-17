@@ -4,15 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ChatBubble from './Components/Chat/ChatBubble'
 import ChatFace from './Components/Chat/ChatFace'
-import Bottomfade from './Components/Chat/Bottomfade'
+import Bottomfade from './Components/Misc/Bottomfade'
+import Sidepanel from './Components/Sidepanel/Sidepanel'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  return (
-    <>
+  return (<>
+    <div className='app-layout'>
+      <Sidepanel />
       <ChatFace />
-      <Bottomfade />
+      
+    </div>
+    {/* <Bottomfade /> */}
     </>
   )
 }
